@@ -1,0 +1,25 @@
+io:
+  video_dir_path:  /home/alex/workspace/video_feature_extraction/videos
+  out_path: /home/alex/workspace/video_feature_extraction/results
+inference:
+  device: cuda
+  batch_size: 32
+  num_workers: 4
+  prefetch_factor: 2
+  frame_window: 1
+  stride: 1
+model:
+  ckpt: ViT-B-32
+  side_size: 224
+  crop_size: 224
+  mean:
+  - 0.48145466
+  - 0.4578275
+  - 0.40821073
+  std:
+  - 0.26862954
+  - 0.26130258
+  - 0.27577711
+  crop: center
+  mirror: true
+model_module_str: models.clip

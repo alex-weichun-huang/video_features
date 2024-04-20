@@ -1,0 +1,26 @@
+io:
+  video_dir_path: ./videos
+  out_path:  /staging/whuang288/ego4d_egovlp_feats
+inference:
+  device: cuda
+  batch_size: 64
+  num_workers: 4
+  prefetch_factor: 2
+  frame_window: 32
+  stride: 8
+model:
+  use_remote: false
+  side_size: 224
+  crop_size: 224
+  dilation: 8
+  mean:
+  - 0.485
+  - 0.456
+  - 0.406
+  std:
+  - 0.229
+  - 0.224
+  - 0.225
+  crop: three_crops
+  mirror: true
+model_module_str: models.egovlp

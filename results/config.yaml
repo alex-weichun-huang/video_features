@@ -1,0 +1,31 @@
+inference:
+  batch_size: 64
+  device: cuda:1
+  frame_window: 32
+  num_workers: 4
+  prefetch_factor: 2
+  stride: 8
+io:
+  debug_mode: false
+  exclude_no_audio: {}
+  filter_completed: true
+  out_path: ./results
+  video_dir_path: ./videos
+model:
+  ckpt: null
+  crop: three_crops
+  crop_size: 224
+  dilation: 8
+  mean:
+  - 0.485
+  - 0.456
+  - 0.406
+  mirror: true
+  side_size: 224
+  slowfast_alpha: 4
+  std:
+  - 0.229
+  - 0.224
+  - 0.225
+  use_remote: false
+model_module_str: models.egovlpv2

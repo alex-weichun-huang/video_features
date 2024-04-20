@@ -1,0 +1,23 @@
+io:
+  video_dir_path:  /home/alex/workspace/video_feature_extraction/videos
+  out_path: /home/alex/workspace/video_feature_extraction/results
+inference:
+  device: cuda
+  batch_size: 8
+  num_workers: 4
+  frame_window: 32
+  stride: 8
+model:
+  ckpt: slowfast_r101
+  slowfast_alpha: 4
+  side_size: 288
+  mean:
+  - 0.45
+  - 0.45
+  - 0.45
+  std:
+  - 0.225
+  - 0.225
+  - 0.225
+  mirror: false
+model_module_str: models.slowfast

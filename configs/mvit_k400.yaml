@@ -1,0 +1,26 @@
+io:
+  video_dir_path:  /home/alex/workspace/video_feature_extraction/videos
+  out_path: /home/alex/workspace/video_feature_extraction/results
+inference:
+  device: cuda
+  batch_size: 16
+  num_workers: 4
+  prefetch_factor: 2
+  frame_window: 32
+  stride: 16
+model:
+  ckpt: "k400"
+  side_size: 224
+  crop_size: 224
+  dilation: 1
+  mean:
+  - 0.45
+  - 0.45
+  - 0.45
+  std:
+  - 0.225
+  - 0.225
+  - 0.225
+  crop: three_crops
+  mirror: true
+model_module_str: models.mvit

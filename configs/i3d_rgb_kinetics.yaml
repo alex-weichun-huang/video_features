@@ -1,0 +1,27 @@
+io:
+  video_dir_path: ./videos
+  out_path:  /staging/whuang288/thumos_i3d_feats
+inference:
+  device: cuda
+  batch_size: 64
+  num_workers: 4
+  prefetch_factor: 2
+  frame_window: 16  
+  stride: 4
+model:
+  use_remote: false
+  ckpt: rgb_kinetics
+  side_size: 288
+  crop_size: 288
+  dilation: 1
+  mean:
+  - 0.5
+  - 0.5
+  - 0.5
+  std:
+  - 0.5
+  - 0.5
+  - 0.5
+  crop: center
+  mirror: false
+model_module_str: models.i3d

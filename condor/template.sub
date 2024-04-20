@@ -1,0 +1,21 @@
+executable = template.sh
+
+universe = vanilla
+log = log_$(Cluster).log
+output = output_$(Cluster)_$(Process).out
+error = error_$(Cluster)_$(Process).err
+
++is_resumable = false
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+request_gpus = 1
+request_cpus = 1
+request_memory = 50GB
+request_disk = 400GB    
+
++WantGPULab = true
++GPUJobLength = "short"
+requirements = ((OpSysMajorVer == 7) || (OpSysMajorVer == 8)) && (HasCHTCStaging == true)
+require_gpus = (DriverVersion >= 10.2) && (Capability < 8)
+queue 1
